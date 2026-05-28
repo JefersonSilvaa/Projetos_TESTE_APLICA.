@@ -1,0 +1,33 @@
+ETAPA 1 concluída.
+
+Status das instalações:
+
+Docker Desktop: OK (Docker version 29.4.3)
+Node.js: OK (v24.14.1) + npm 11.11.0
+PostgreSQL: instalado agora (17.10) e comando psql funcionando no PATH
+VS Code: OK (1.121.0)
+Git: OK (2.51.0)
+N8N: preparado via Docker (imagem baixada e container em execução)
+
+ETAPA 2 concluída.
+
+Estrutura criada:
+
+neo-ia
+backend
+postgres
+n8n
+docs
+docker
+logs
+flows
+database
+docker-compose.yml
+
+subi e validei os serviços do projeto:
+
+PostgreSQL: porta 5432 ativa
+n8n: porta 5678 ativa
+Acesso direto:
+
+n8n: http://localhost:5678 (Substituir pelo servido http da empresa (rost))

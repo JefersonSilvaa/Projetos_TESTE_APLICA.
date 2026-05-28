@@ -30,7 +30,7 @@ database/
 
 # n8n local runtime data
 n8n/storage/
-n8n/config/
+n8n/config
 n8n/crash.journal
 
 # Misc temp files

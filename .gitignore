@@ -12,7 +12,8 @@ coverage/
 !.env.example
 
 # Logs
-logs/
+logs/*
+!logs/.gitkeep
 *.log
 npm-debug.log*
 yarn-debug.log*
@@ -25,7 +26,8 @@ Thumbs.db
 .idea/
 
 # Docker runtime data and local volumes
-postgres/
+postgres/*
+!postgres/.gitkeep
 database/
 
 # n8n local runtime data

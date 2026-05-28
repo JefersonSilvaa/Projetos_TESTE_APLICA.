@@ -1,0 +1,38 @@
+# Node and dependencies
+node_modules/
+
+# Build artifacts
+dist/
+build/
+coverage/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS and editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Docker runtime data and local volumes
+postgres/
+database/
+
+# n8n local runtime data
+n8n/storage/
+n8n/config/
+n8n/crash.journal
+
+# Misc temp files
+*.tmp
+*.swp

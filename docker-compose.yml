@@ -1,0 +1,45 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: neo-ia-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: neoia
+      POSTGRES_USER: neoia_user
+      POSTGRES_PASSWORD: neoia_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./database:/var/lib/postgresql/data
+    networks:
+      - neo-ia-net
+
+  n8n:
+    image: n8nio/n8n:latest
+    container_name: neo-ia-n8n
+    restart: unless-stopped
+    ports:
+      - "5678:5678"
+    environment:
+      DB_TYPE: postgresdb
+      DB_POSTGRESDB_HOST: postgres
+      DB_POSTGRESDB_PORT: 5432
+      DB_POSTGRESDB_DATABASE: neoia
+      DB_POSTGRESDB_USER: neoia_user
+      DB_POSTGRESDB_PASSWORD: neoia_pass
+      N8N_HOST: localhost
+      N8N_PORT: 5678
+      N8N_PROTOCOL: http
+    depends_on:
+      - postgres
+    volumes:
+      - ./n8n:/home/node/.n8n
+      - ./logs:/home/node/logs
+      - ./flows:/data/flows
+    networks:
+      - neo-ia-net
+
+networks:
+  neo-ia-net:
+    driver: bridge
+    
